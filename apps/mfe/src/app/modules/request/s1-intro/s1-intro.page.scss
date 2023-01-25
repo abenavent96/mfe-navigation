@@ -1,0 +1,81 @@
+.header-page {
+  &__top {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      max-width: 408px;
+    }
+    img.logo {
+      width: 200px;
+      height: 24px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+    img.illustration {
+      height: 150px;
+      object-fit: contain;
+      margin: 16px 0;
+    }
+  }
+  ul {
+    list-style: none;
+    position: relative;
+    li {
+      margin: 18px 0;
+      line-height: 24px;
+      color: grey;
+    }
+    li:before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      padding: 4px;
+      margin-left: -40px;
+      background-color: #f0f0f0;
+      background-image: url('/assets/integrations/mets/included.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    display: grid;
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    li {
+      margin: 16px 0;
+      line-height: 32px;
+      padding-left: 48px;
+    }
+    li:before {
+      width: 32px;
+      height: 32px;
+      margin-left: -48px;
+    }
+  }
+  .red-text {
+    color: red;
+  }
+}
+
+.error-page {
+  text-align: center;
+  h1 {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: black;
+  }
+  p {
+    opacity: 0.8;
+  }
+  img {
+    margin: 20px 0;
+  }
+  a {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}

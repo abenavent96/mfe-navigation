@@ -1,0 +1,34 @@
+<header class="c-header">
+  <div class="c-header__container">
+    <div class="c-header__back" (click)="onBack()">
+      <img src="/assets/integrations/mets/back.svg" alt="Atrás">
+    </div>
+    <div class="c-header__title">
+      {{ titleName }}
+    </div>
+    <div class="c-header__close" *ngIf="showCloseButton" (click)="onClose()">
+      <img src="/assets/integrations/mets/close.svg" alt="Cerrar">
+    </div>
+  </div>
+</header>
+
+<div class="c-progress-bar" *ngIf="progressBar !== null">
+  <div class="c-progress-bar__container">
+    <div class="c-progress-bar__bar">
+      <div class="c-progress-bar__progress" [style.width]="progressBar + '%'"></div>
+      <div class="c-progress-bar__text">{{ progressBar }}% completado</div>
+    </div>
+  </div>
+</div>
+
+<div class="c-container" #container>
+  <div class="c-container__content">
+    <ng-content select="[content]"></ng-content>
+  </div>
+</div>
+
+<div class="c-footer">
+  <div class="c-footer__container" #footerContent>
+    <ng-content select="[footer]"></ng-content>
+  </div>
+</div>
