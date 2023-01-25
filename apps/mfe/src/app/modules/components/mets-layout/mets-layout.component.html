@@ -1,13 +1,13 @@
 <header class="c-header">
   <div class="c-header__container">
     <div class="c-header__back" (click)="onBack()">
-      <img src="/assets/integrations/mets/back.svg" alt="Atrás">
+      <img src="{{assetsUrl}}assets/integrations/mets/back.svg" alt="Atrás">
     </div>
     <div class="c-header__title">
       {{ titleName }}
     </div>
     <div class="c-header__close" *ngIf="showCloseButton" (click)="onClose()">
-      <img src="/assets/integrations/mets/close.svg" alt="Cerrar">
+      <img src="{{assetsUrl}}assets/integrations/mets/close.svg" alt="Cerrar">
     </div>
   </div>
 </header>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'mfe-navigation-mets-layout-component',
@@ -9,13 +9,16 @@ import { Router } from '@angular/router';
 })
 export class MetsLayoutComponent implements OnInit {
 
+  assetsUrl = __webpack_public_path__;
+
   @Input() titleName = '';
   @Input() showCloseButton = true;
   @Input() backUrl = '';
   @Input() progressBar: number | null = null;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -24,7 +27,7 @@ export class MetsLayoutComponent implements OnInit {
 
   onBack() {
     if (this.backUrl) {
-      this.router.navigateByUrl(this.backUrl);
+      this.router.navigate([this.backUrl], { relativeTo: this.route.parent });
     }
   }
 

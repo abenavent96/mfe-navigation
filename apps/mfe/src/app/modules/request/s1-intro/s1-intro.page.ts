@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'mfe-navigation-s1-intro-component',
@@ -8,8 +8,12 @@ import { Router } from '@angular/router';
 })
 export class S1IntroComponent implements OnInit {
 
+  assetsUrl = __webpack_public_path__;
+  @HostBinding("style.--imageUrl") imageUrl =  `url('${__webpack_public_path__}assets/integrations/mets/included.svg')`;
+
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -18,6 +22,10 @@ export class S1IntroComponent implements OnInit {
 
   onContinue() {
     console.log('on Continue');
+    console.log(this.route);
+    console.log(this.route.url);
+    // this.route.url
+    this.router.navigate(['s2'], { relativeTo: this.route.parent });
   }
 
   private init() {
