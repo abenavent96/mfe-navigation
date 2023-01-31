@@ -28,6 +28,9 @@ export class MetsLayoutComponent implements OnInit {
   onBack() {
     if (this.backUrl) {
       this.router.navigate([this.backUrl], { relativeTo: this.route.parent });
+    } else {
+      // TODO
+      this.router.navigate(['', { relativeTo: this.route.parent }]);
     }
   }
 

@@ -22,14 +22,14 @@ export class S1IntroComponent implements OnInit {
 
   onContinue() {
     console.log('on Continue');
-    console.log(this.route);
-    console.log(this.route.url);
-    // this.route.url
-    this.router.navigate(['s2'], { relativeTo: this.route.parent });
+    this.router.navigate(['location/s2'], { relativeTo: this.route.parent });
   }
 
   private init() {
     console.log('init s1-intro');
+    this.route.data.subscribe(o => {
+      console.log(o);
+    })
   }
 
 }
