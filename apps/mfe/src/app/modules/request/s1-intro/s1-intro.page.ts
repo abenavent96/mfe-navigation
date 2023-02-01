@@ -21,12 +21,14 @@ export class S1IntroComponent implements OnInit {
   }
 
   onContinue() {
-    console.log('on Continue');
+    if (typeof window !== undefined) {
+      const customEvent = new CustomEvent('multimap:event', { detail: { data: 'page 1 to 2', namespace: 'mfe-navigation'} });
+      window.dispatchEvent(customEvent)
+    }
     this.router.navigate(['location/s2'], { relativeTo: this.route.parent });
   }
 
   private init() {
-    console.log('init s1-intro');
     this.route.data.subscribe(o => {
       console.log(o);
     })

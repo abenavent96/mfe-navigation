@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { OneTrust } from '../../core/services/onetrust';
 import { SharedModule } from '../../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { S1IntroComponent } from './s1-intro/s1-intro.page';
@@ -24,4 +26,15 @@ import { S3OtherLocationComponent } from './s3-other-location/s3-other-location.
   ],
   providers: [],
 })
-export class RequestModule {}
+export class RequestModule {
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: string,
+    private onetrust: OneTrust
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.onetrust.init();
+    }
+  }
+
+}

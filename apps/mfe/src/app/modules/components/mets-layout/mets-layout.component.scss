@@ -13,10 +13,11 @@ $max-width-desktop: 768px;
 }
 
 .c-header {
+  --color-primary: grey;
   display: block;
   width: 100%;
   height: $header-height;
-  background: grey;
+  background: var(--color-primary);
   text-align: center;
   &__container {
     margin: 0 auto;
