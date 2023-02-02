@@ -7,7 +7,7 @@
           <img class="logo" src="{{assetsUrl}}assets/integrations/mets/logo.svg">
           <h1>Reparación y reformas, 365 días del año</h1>
           <p>
-            Calidad MAPFRE para tu casa o tu negocio.
+            Calidad {{ helper.getConfigJson()?.brand || 'MAPFRE' }} para tu casa o tu negocio.
             <br>
             Recuerda que se trata de un servicio de pago independiente a tu póliza de hogar.
           </p>

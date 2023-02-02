@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { EntryGuard } from '../../core/guards/entry';
 import { OneTrust } from '../../core/services/onetrust';
 import { SharedModule } from '../../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
@@ -19,7 +20,7 @@ import { S3OtherLocationComponent } from './s3-other-location/s3-other-location.
     ComponentsModule,
     RouterModule.forChild([
       { path: '', redirectTo: 's1', pathMatch: 'full' },
-      { path: 's1', component: S1IntroComponent },
+      { path: 's1', component: S1IntroComponent, canActivate: [EntryGuard] },
       { path: 'location/s2', component: S2LocationComponent },
       { path: 'location/s3/search', component: S3OtherLocationComponent }
     ]),

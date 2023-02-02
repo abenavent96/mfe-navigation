@@ -21,7 +21,7 @@ export class OneTrust {
     return new Promise((resolve) => {
       this.resolve = resolve;
       const params = new URLSearchParams(this.document.location.search);
-      if (params.get('skipOneTrustScript') === 'true') { return this.resolve(); }
+      if (params.get('skipOneTrustScript') === 'true') { return this.resolve(); }
       this.id = '89c464e8-e28b-4539-bc24-93be6407118d';
       this.addScriptTagConsent();
       this.addScriptTagScriptTemplates();

@@ -1,5 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HelperService } from '../../../core/services/helper';
 
 @Component({
   selector: 'mfe-navigation-s1-intro-component',
@@ -13,7 +14,8 @@ export class S1IntroComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public helper: HelperService
   ) { }
 
   ngOnInit() {
