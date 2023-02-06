@@ -1,0 +1,11 @@
+$tags: default, round;
+
+@mixin button-form($tag) {
+  @if $tag == 'default' {
+      border-radius: 4px;
+  }
+
+  @else if $tag == 'round' {
+      border-radius: 32px;
+  }
+}
