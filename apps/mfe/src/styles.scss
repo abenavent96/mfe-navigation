@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'styles/mixins';
-
-
 
 :root {
   --multimap-widget-color-primary:                   #D81E05;
@@ -17,6 +14,5 @@
   --multimap-widget-color-grey-medium-light:          #D9DFE3;
   --multimap-widget-color-grey-light:                 #EDF1F3;
   --multimap-widget-color-white:                      #FFFFFF;
-
+  --multimap-widget-button-radius:                        8px;
 }
-

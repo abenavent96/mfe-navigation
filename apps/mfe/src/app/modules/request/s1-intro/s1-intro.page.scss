@@ -1,15 +1,3 @@
-$button-tag: rounded;
-
-@mixin button-form($tag) {
-  @if $tag == 'default' {
-    border-radius: 4px;
-  }
-
-  @else if $tag == 'rounded' {
-    border-radius: 32px;
-  }
-}
-
 .header-page {
   &__top {
     margin: 10px 0;
@@ -94,5 +82,5 @@ $button-tag: rounded;
 
 button {
   padding: 8px;
-  @include button-form($button-tag);
+  border-radius: var(--multimap-widget-button-radius);
 }

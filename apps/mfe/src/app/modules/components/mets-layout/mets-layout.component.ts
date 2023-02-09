@@ -32,7 +32,7 @@ export class MetsLayoutComponent {
   }
 
   onClose() {
-    console.log('onclose');
+    this.router.navigate(['/']);
   }
 
 }
