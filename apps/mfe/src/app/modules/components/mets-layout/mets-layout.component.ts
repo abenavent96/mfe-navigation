@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { HelperService } from '../../../core/services/helper';
 
 @Component({
   selector: 'mfe-navigation-mets-layout-component',
@@ -18,17 +19,12 @@ export class MetsLayoutComponent {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private helper: HelperService
   ) {}
 
   onBack() {
-    if (this.backUrl) {
-      const extras: NavigationExtras | undefined = this.backUrl?.startsWith('/') ? undefined : { relativeTo: this.route.parent };
-      this.router.navigate([this.backUrl], extras);
-    } else {
-      // TODO
-      this.router.navigate(['', { relativeTo: this.route.parent }]);
-    }
+    this.backUrl ? this.router.navigate([this.helper.getParentRoute(), this.backUrl]) : this.router.navigate(['/']);
   }
 
   onClose() {
